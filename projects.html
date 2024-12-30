@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Video Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="nav-btn">Home</a></li>
+            <li><a href="projects.html" class="nav-btn">Projects</a></li>
+            <li><a href="contact.html"class="nav-btn">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <!-- Video Gallery Section -->
+    <div class="scrollable-videos">
+        <h1>My Video Projects</h1>
+        <div class="video-container">
+            <!-- Video Cards (8 videos) -->
+            <div class="video-card" onclick="openModal('videos/video1')">
+                <h3>Informative</h3>
+                <video src="videos/video1.mp4"autoplay muted loop controls preload="auto"></video>
+                <div class="overlay">Project 1</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video2.mp4')">
+                <h3>Podcast</h3>
+                <video src="videos/video2.mp4"autoplay muted loop controls preload="auto" muted></video>
+                <div class="overlay">Project 2</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video3.mp4')">
+                <h3>Faceless Video </h3>
+                <video src="videos/video3.mp4"autoplay muted loop controls preload="auto" muted></video>
+                <div class="overlay">Project 3</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video4.mp4')">
+                <video src="videos/video4.mp4" autoplay muted loop controls preload="auto"muted></video>
+                <div class="overlay">Project 4</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video5.mp4')">
+                <video src="videos/video5.mp4" autoplay muted loop controls preload="auto"muted></video>
+                <div class="overlay">Project 5</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video6.mp4')">
+                <video src="videos/video6.mp4" muted></video>
+                <div class="overlay">Project 6</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video7.mp4')">
+                <video src="videos/video7.mp4" muted></video>
+                <div class="overlay">Project 7</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video8.mp4')">
+                <video src="videos/video8.mp4" muted></video>
+                <div class="overlay">Project 8</div>
+            </div>
+
+        <!-- Cloned Videos -->
+
+            <div class="video-card" onclick="openModal('videos/video1')">
+                <video src="videos/video1.mp4"autoplay muted loop controls preload="auto"></video>
+                <div class="overlay">Project 1</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video2.mp4')">
+                <video src="videos/video2.mp4"autoplay muted loop controls preload="auto" muted></video>
+                <div class="overlay">Project 2</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video3.mp4')">
+                <video src="videos/video3.mp4"autoplay muted loop controls preload="auto" muted></video>
+                <div class="overlay">Project 3</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video4.mp4')">
+                <video src="videos/video4.mp4" autoplay muted loop controls preload="auto"muted></video>
+                <div class="overlay">Project 4</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video5.mp4')">
+                <video src="videos/video5.mp4" autoplay muted loop controls preload="auto"muted></video>
+                <div class="overlay">Project 5</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video6.mp4')">
+                <video src="videos/video6.mp4" muted></video>
+                <div class="overlay">Project 6</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video7.mp4')">
+                <video src="videos/video7.mp4" muted></video>
+                <div class="overlay">Project 7</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video8.mp4')">
+                <video src="videos/video8.mp4" muted></video>
+                <div class="overlay">Project 8</div>
+            </div>
+
+            <!-- Cloned Videos -->
+
+            <div class="video-card" onclick="openModal('videos/video1')">
+                <video src="videos/video1.mp4"autoplay muted loop controls preload="auto"></video>
+                <div class="overlay">Project 1</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video2.mp4')">
+                <video src="videos/video2.mp4"autoplay muted loop controls preload="auto" muted></video>
+                <div class="overlay">Project 2</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video3.mp4')">
+                <video src="videos/video3.mp4"autoplay muted loop controls preload="auto" muted></video>
+                <div class="overlay">Project 3</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video4.mp4')">
+                <video src="videos/video4.mp4" autoplay muted loop controls preload="auto"muted></video>
+                <div class="overlay">Project 4</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video5.mp4')">
+                <video src="videos/video5.mp4" autoplay muted loop controls preload="auto"muted></video>
+                <div class="overlay">Project 5</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video6.mp4')">
+                <video src="videos/video6.mp4" muted></video>
+                <div class="overlay">Project 6</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video7.mp4')">
+                <video src="videos/video7.mp4" muted></video>
+                <div class="overlay">Project 7</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video8.mp4')">
+                <video src="videos/video8.mp4" muted></video>
+                <div class="overlay">Project 8</div>
+            </div>
+
+            <!-- Cloned Videos -->
+
+            <div class="video-card" onclick="openModal('videos/video1')">
+                <video src="videos/video1.mp4"autoplay muted loop controls preload="auto"></video>
+                <div class="overlay">Project 1</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video2.mp4')">
+                <video src="videos/video2.mp4"autoplay muted loop controls preload="auto" muted></video>
+                <div class="overlay">Project 2</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video3.mp4')">
+                <video src="videos/video3.mp4"autoplay muted loop controls preload="auto" muted></video>
+                <div class="overlay">Project 3</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video4.mp4')">
+                <video src="videos/video4.mp4" autoplay muted loop controls preload="auto"muted></video>
+                <div class="overlay">Project 4</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video5.mp4')">
+                <video src="videos/video5.mp4" autoplay muted loop controls preload="auto"muted></video>
+                <div class="overlay">Project 5</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video6.mp4')">
+                <video src="videos/video6.mp4" muted></video>
+                <div class="overlay">Project 6</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video7.mp4')">
+                <video src="videos/video7.mp4" muted></video>
+                <div class="overlay">Project 7</div>
+            </div>
+            <div class="video-card" onclick="openModal('videos/video8.mp4')">
+                <video src="videos/video8.mp4" muted></video>
+                <div class="overlay">Project 8</div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="videoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <video id="modalVideo" controls autoplay></video>
+
+    </div>
+    
+
+    <script src="script.js"></script>
+
+</body>
+</html>
