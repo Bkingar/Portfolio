@@ -192,6 +192,47 @@ function toggleButtons() {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const videoContainer = document.querySelector(".video-container");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    // Enable horizontal scroll on mouse drag
+    videoContainer.addEventListener("mousedown", (e) => {
+        isDown = true;
+        videoContainer.classList.add("active");
+        startX = e.pageX - videoContainer.offsetLeft;
+        scrollLeft = videoContainer.scrollLeft;
+    });
+
+    videoContainer.addEventListener("mouseleave", () => {
+        isDown = false;
+        videoContainer.classList.remove("active");
+    });
+
+    videoContainer.addEventListener("mouseup", () => {
+        isDown = false;
+        videoContainer.classList.remove("active");
+    });
+
+    videoContainer.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - videoContainer.offsetLeft;
+        const walk = (x - startX) * 2; // Increase scroll speed
+        videoContainer.scrollLeft = scrollLeft - walk;
+    });
+
+    // Enable mouse wheel horizontal scrolling
+    videoContainer.addEventListener("wheel", (e) => {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            videoContainer.scrollLeft += e.deltaY * 1.5; // Adjust scroll speed
+        }
+    });
+
+
 
 
 
