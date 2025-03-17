@@ -32,26 +32,6 @@ function highlightActiveVideo() {
     });
 }
 
-// Toggle social media links
-function toggleSocialMediaLinks() {
-    const socialLinks = document.querySelector(".social-links");
-    if (socialLinks) {
-        socialLinks.classList.toggle("hidden");
-    } else {
-        console.error("Social links container not found.");
-    }
-}
-
-// Attach click event to social media button
-document.addEventListener("DOMContentLoaded", () => {
-    const socialMediaButton = document.querySelector(".social-media-button");
-    if (socialMediaButton) {
-        socialMediaButton.addEventListener("click", toggleSocialMediaLinks);
-    } else {
-        console.error("Social media button not found.");
-    }
-});
-
 // Adjust the video container height dynamically
 function adjustScrollableHeight() {
     const headerHeight = document.querySelector("header")?.offsetHeight || 0;
@@ -62,14 +42,35 @@ function adjustScrollableHeight() {
 window.addEventListener("load", adjustScrollableHeight);
 window.addEventListener("resize", adjustScrollableHeight);
 
+// Smooth Mouse Scroll
+let scrollSpeed = 0;
+let isScrolling = false;
+
+videoContainer.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    scrollSpeed += e.deltaY * 0.2; // Adjusting speed multiplier
+    if (!isScrolling) smoothScroll();
+});
+
+function smoothScroll() {
+    isScrolling = true;
+    scrollSpeed *= 0.9; // Friction effect
+    videoContainer.scrollLeft += scrollSpeed;
+
+    if (Math.abs(scrollSpeed) > 0.5) {
+        requestAnimationFrame(smoothScroll);
+    } else {
+        isScrolling = false;
+    }
+}
+
 // Auto-scroll settings
-let scrollAmount = 1; // Pixels per frame
-let isUserInteracting = false;
 let autoScrollInterval;
+let isUserInteracting = false;
 
 function autoScroll() {
     if (!isUserInteracting) {
-        videoContainer.scrollLeft += scrollAmount;
+        videoContainer.scrollLeft += 1;
 
         if (videoContainer.scrollLeft + videoContainer.clientWidth >= videoContainer.scrollWidth) {
             videoContainer.scrollLeft = 0;
@@ -100,7 +101,6 @@ let startX, scrollLeft;
 
 videoContainer.addEventListener("mousedown", (e) => {
     isMouseDown = true;
-    videoContainer.classList.add("active");
     startX = e.pageX - videoContainer.offsetLeft;
     scrollLeft = videoContainer.scrollLeft;
 });
@@ -121,12 +121,6 @@ videoContainer.addEventListener("mousemove", (e) => {
     videoContainer.scrollLeft = scrollLeft - walk;
 });
 
-// Mouse wheel horizontal scrolling
-videoContainer.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    videoContainer.scrollLeft += e.deltaY * 1.5;
-});
-
 // Touch swipe scrolling (for mobile)
 let touchStartX = 0;
 let touchScrollLeft = 0;
@@ -145,18 +139,6 @@ videoContainer.addEventListener("touchmove", (e) => {
 });
 
 videoContainer.addEventListener("touchend", resumeAutoScroll);
-
-// Icon button toggle for additional buttons
-document.querySelector(".icon-button").addEventListener("click", function () {
-    const hiddenButtons = document.querySelector(".hidden-buttons");
-    hiddenButtons.style.display = hiddenButtons.style.display === "block" ? "none" : "block";
-});
-
-function toggleButtons() {
-    const poppingButtons = document.querySelector(".popping-buttons");
-    poppingButtons.classList.toggle("hidden");
-    poppingButtons.classList.toggle("visible");
-}
 
 // Scroll event listener for highlighting active video
 videoContainer.addEventListener("scroll", highlightActiveVideo);
