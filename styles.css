@@ -12,6 +12,21 @@ body {
     line-height: 1.6;
 }
 
+
+
+
+.popping-buttons {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.popping-buttons.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
 /* Base Styles */
 body {
     background: #111; /* Default dark background color */
