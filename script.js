@@ -12,6 +12,13 @@ function closeModal() {
     modalVideo.pause();
 }
 
+
+
+function toggleButtons() {
+    const buttonsContainer = document.querySelector(".popping-buttons");
+    buttonsContainer.classList.toggle("hidden");
+}
+
 // Highlight the active video card
 const videoContainer = document.querySelector(".video-container");
 const videoCards = document.querySelectorAll(".video-card");
