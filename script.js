@@ -14,11 +14,6 @@ function closeModal() {
 
 
 
-function toggleButtons() {
-    const buttonsContainer = document.querySelector(".popping-buttons");
-    buttonsContainer.classList.toggle("hidden");
-}
-
 // Highlight the active video card
 const videoContainer = document.querySelector(".video-container");
 const videoCards = document.querySelectorAll(".video-card");
@@ -149,3 +144,15 @@ videoContainer.addEventListener("touchend", resumeAutoScroll);
 
 // Scroll event listener for highlighting active video
 videoContainer.addEventListener("scroll", highlightActiveVideo);
+
+
+
+
+function toggleButtons() {
+    const buttonsContainer = document.querySelector(".popping-buttons");
+    if (buttonsContainer) {
+        buttonsContainer.classList.toggle("hidden");
+    } else {
+        console.error("Couldn't find .popping-buttons element");
+    }
+}
