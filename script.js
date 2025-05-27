@@ -145,14 +145,19 @@ videoContainer.addEventListener("touchend", resumeAutoScroll);
 // Scroll event listener for highlighting active video
 videoContainer.addEventListener("scroll", highlightActiveVideo);
 
-
-
-
 function toggleButtons() {
+    alert("Toggle clicked");
     const buttonsContainer = document.querySelector(".popping-buttons");
-    if (buttonsContainer) {
-        buttonsContainer.classList.toggle("hidden");
-    } else {
-        console.error("Couldn't find .popping-buttons element");
-    }
+    buttonsContainer.classList.toggle("hidden");
 }
+
+
+
+// function toggleButtons() {
+  //  const buttonsContainer = document.querySelector(".popping-buttons");
+   // if (buttonsContainer) {
+    //    buttonsContainer.classList.toggle("hidden");
+   // } else {
+   //     console.error("Couldn't find .popping-buttons element");
+  //  }
+//} //
